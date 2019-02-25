@@ -1,6 +1,6 @@
 <template>
 <div class="text-right">
-    
+     <button @click="$emit('regenerate')" class="btn btn-regen ml-2" data-toggle="tooltip"  title="Generate a new reply"><i class="fas fa-undo"></i></button>
      <select @change="changeCategory"  v-model="localSelected" class="">
              <option disabled value="">Change Reply Type</option>
           <option v-for="(option,key) in options" :key="key" :value="option.value" >
@@ -9,7 +9,7 @@
       
         
     </select>
-     <button @click="$emit('regenerate')" class="btn btn-regen ml-2" data-toggle="tooltip"  title="Generate a new reply"><i class="fas fa-undo"></i></button>
+    
 </div>
    
 </template>
@@ -35,19 +35,21 @@
         i {
             color: #fff !important;
         }
-
-          border-radius:0;
-          background: #00BE71;
+    &:hover {
+        background: #00965A
+    }
+    border-radius:0;
+    background: #00BE71;
     border-radius: 0;
-    
+    min-height: 42px;
     margin-bottom: 5px;
     border-radius:100%;
     }
     select {
-        appearance: none;
+
         border-radius: 0px;
         font-size: 11px;
-    
+        display: block;
         border-width: 0;
         color: #0064b7;
         font-weight: 700;

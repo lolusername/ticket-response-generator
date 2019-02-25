@@ -27,10 +27,14 @@
 import AlertForm from "./components/AlertForm.vue";
 
 
+
 export default {
   name: "app",
   components: {
     AlertForm
+  },
+  directives: {
+      VueClipboard
   }
 };
 </script>

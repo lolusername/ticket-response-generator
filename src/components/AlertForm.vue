@@ -1,5 +1,6 @@
 <template>
   <div >
+   
       <form class="container">
         <div class="row">
           <div class="col form-group">
@@ -28,6 +29,7 @@
       <div id="response-card-container" class="reply-wrapper d-flex align-items-center" :class="{'vh-100 py-5 mt-2':submitted}">
         <section class="container">
           <ResponseCard @regenerate="genAlert" :randomQuoteObject="randomQuoteObject" :isVisual="isVisual" :options="options" :selected.sync="selected" v-if="submitted" />
+          
      
         </section>
        
