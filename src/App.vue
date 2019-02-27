@@ -32,9 +32,6 @@ export default {
   name: "app",
   components: {
     AlertForm
-  },
-  directives: {
-      VueClipboard
   }
 };
 </script>

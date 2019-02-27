@@ -7,31 +7,33 @@
                     <span class="reply">Reply:</span>
                     <RegenerateModule :options="options" :selected="selected" @change-category="changeCategory" @regenerate="$emit('regenerate')"/>   
                 </div>
-                <div class="card-body response ">
-                    <blockquote class="blockquote mb-0 d-flex">
-                        <section v-if="isVisual">
+                <div class="card-body response d-flex pb-0b flex-wrap ">
+                    <blockquote class="blockquote mb-0 d-flex row px-3">
+                        <section class="" v-if="isVisual">
                             <p>{{randomQuoteObject.preImgText}}</p>
-                            <img :src="randomQuoteObject.imgUrl" alt="" class="w-100 col-md-8 offset-md-2">
+                            <img :src="randomQuoteObject.imgUrl" alt="" class="w-100 gif col-md-8 offset-md-2">
                             <p class="mt-3">{{randomQuoteObject.postImgText}}</p>
                         </section>
-                        <section v-else>
+                        <section class="" v-else>
                             {{randomQuoteObject}}
                         </section>
-                        <div class=" align-self-baseline engage-btns d-flex justify-content-between">
-                            <p>
-                            <a class="btn btn-large btn-info col"
-                            href="https://twitter.com/intent/tweet?text=Hello%20world">
-                            Tweet</a>
-                            </p>
-                             <p>
-                            <button v-clipboard:copy="selected" class="btn btn-primary">copy</button>
-                        </p>
-
-                        </div>
                        
-                        <footer v-if="false" class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+                       
+            
                
                     </blockquote>
+                     <section class="row align-self-stretch d-flex align-items-end flex-fill px-3">
+                            <p class="flex-fill mb-0">
+                                    <a class="btn btn-large btn-info flex-fill col"
+                                        href="https://twitter.com/intent/tweet?text=Hello%20world">
+                                        Tweet
+                                    </a>
+                                </p>
+                            <p class="flex-fill mb-0">
+                                <button v-clipboard:copy="selected" class="btn btn-primary col">copy</button>
+                            </p>
+
+                        </section>
                     
                 </div>
             </div>
@@ -77,7 +79,9 @@ button,a {
 .reply {
     font-size:2rem;
 }
-
+image.gif {
+    object-fit: contain;
+}
 .card-header, .card{
     border-radius: 0;
 }

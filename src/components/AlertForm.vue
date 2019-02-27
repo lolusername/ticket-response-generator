@@ -22,7 +22,7 @@
           
         </div>
         <div class="row text-center">
-          <button  @click="genAlert"  type="button" class="btn btn-info btn-lg mx-auto">GENERATE REPLY</button>
+          <button  @click="genAlert"  type="button" class="btn btn-info btn-lg mx-auto my-5">GENERATE REPLY</button>
         
         </div>
       </form>
