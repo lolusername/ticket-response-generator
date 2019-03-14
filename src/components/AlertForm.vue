@@ -3,7 +3,7 @@
     <form class="container">
       <div class="row">
         <div class="col form-group">
-          <input type="text" class="form-control" placeholder="Email" />
+          <input type="text" v-model="contactObject.email" class="form-control" placeholder="Email" />
         </div>
         <div class="col form-group">
           <div class="input-group mb-3">
@@ -63,6 +63,9 @@ export default {
   },
   data() {
     return {
+      contactObject: {
+        email: ""
+      },
       randomQuoteObject: {},
       submitted: false,
       selected: "",
@@ -103,7 +106,9 @@ export default {
   },
   methods: {
     genAlert() {
+      console.log(this.contactObject.email);
       if (this.selected) {
+        
         var prevSubmitValue = this.submitted;
         var quote = "";
         var selectedCategory = this.selected;
@@ -127,29 +132,22 @@ export default {
           }
         });
       }
+    
     },
     createContact() {
-      const apiKey = "3b39d698-63e9-474c-82f8-2de71166af36";
-      const url =
-        "https://api.hubapi.com/contacts/v1/contact/?hapikey=" + apiKey;
 
-      let contactObject = {
-        properties: [
-          {
-            property: "email",
-            value: "testingapis@hubspot.com"
-          },
-          {
-            property: "firstname",
-            value: "Atilio"
-          }
-        ]
-      };
 
+      const urlBase = "https://us-central1-it-alert-generator.cloudfunctions.net/hsMiddleware/";
+
+
+      //let url = `${urlBase}email=${this.contactObject.email}`;
+
+      const contactObj = this.contactObject;
       this.$http
-        .post(url, contactObject)
+        .post(urlBase, contactObj)
         .then(function(response) {
           console.log(response);
+          console.log(`contact object:`,contactObj);
         })
         .catch(function(error) {
           console.log(error);

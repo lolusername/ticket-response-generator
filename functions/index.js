@@ -1,50 +1,53 @@
 /* eslint-disable promise/always-return */
 /* eslint-disable prettier/prettier */
 const functions = require("firebase-functions");
+const axios = require("axios");
 const express = require('express');
 const cors = require('cors');
 const app = express();
+var bodyParser = require('body-parser');
+var multer = require('multer'); // v1.0.5
+var upload = multer(); // for parsing multipart/form-data
 
+app.use(bodyParser.json()); // for parsing application/json
+app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 // Automatically allow cross-origin requests
 app.use(cors({ origin: true }));
 
-const apiKey = "3b39d698-63e9-474c-82f8-2de71166af36";
-const url = "https://api.hubapi.com/contacts/v1/contact/?hapikey=" + apiKey;
+app.post('/', (req,res)=>{
 
-app.post(url, (req,res)=>{
-    response.send("mood-b");
-    let data = request.query;
-    console.log(data);
+    console.log(req.body);
+    res.json(req.body);
+
+    const apiKey = "ca73b02b-7d20-4e56-b738-623d45190124";
+    const url = "https://api.hubapi.com/contacts/v1/contact/?hapikey=" + apiKey;
+
+    
+    let contactObject = {
+        properties: [ 
+            {
+                "property": "email",
+                "value": req.body.email
+            },
+            {
+              "property": "firstname",
+              "value": "Adrian"
+            }
+        ]
+    };
+
+    axios.post(url,  contactObject)
+    .then((response) => {
+        console.log("post response: "+response);
+    })
+    .then((response) => {
+        console.log(".then response: "+response);
+
+      })
+    .catch((error) => {
+        console.log(error);
+  
+    });
 });
 
-exports.hubSpotMiddleware = functions.https.onRequest(app);
-
-
-// exports.createHsContact = functions.https.onRequest((request, response) => {
-
-//     response.send("mood");
-//     let data = request.query;
-//     console.log(data);
-
-//     const apiKey = "3b39d698-63e9-474c-82f8-2de71166af36";
-//     const url = "https://api.hubapi.com/contacts/v1/contact/?hapikey=" + apiKey;
-
-//     let contactObject = {
-//         properties: [ 
-//             {
-//                 property: "email",
-//                 value: data.email
-//             },
-//             {
-//                 property: "name",
-//                 value: data.name
-//             }
-//         ]};
-
-//     axios.post(url, contactObject).then((response) => {
-//         console.log(response);
-//     })
-//     .catch((error) => {
-//         console.log(error);
-//     });
-// });
+exports.hsMiddleware = functions.https.onRequest(app);
