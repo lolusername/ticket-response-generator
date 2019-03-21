@@ -23,11 +23,15 @@
                   </p>
                 </div>
                 <div class="row">
+                  <section class=" col-md-8 offset-md-2">
+
+                  
                   <img
                     :src="randomQuoteObject.imgUrl"
                     alt=""
-                    class="img-fluid gif col-md-8 offset-md-2"
+                    class="img-fluid gif"
                   />
+                  </section>
                 </div>
 
                 <p class="mt-3">{{ randomQuoteObject.postImgText }}</p>
@@ -49,7 +53,6 @@
                   <social-sharing url="http://italertgenerator.com"
                                 title="IT ALERT GENERATOR"
                                 description="Generate ticket responses you can forward (or not)"
-                             
                                 hashtags="PutInATicket"
                                 twitter-user=""
                                 inline-template>
@@ -63,7 +66,7 @@
                 </button>
               </p>
               <p class="flex-fill mb-0">
-                <button v-clipboard:copy="selected" class="btn btn-copy col">
+                <button @click="doCopy" class="btn btn-copy col">
                   <i class="fas fa-copy"></i> Copy
                 </button>
               </p>
@@ -91,6 +94,21 @@ export default {
   methods: {
     changeCategory(newSelected) {
       this.$emit("update:selected", newSelected);
+    },
+    doCopy: function () {
+      var stringy = ""
+      if (this.selected === "snarky") {
+        stringy = this.randomQuoteObject;
+      } else if (this.selected === "visual") {
+        stringy = this.randomQuoteObject.preImgText + this.randomQuoteObject.postImgText;
+      } else {
+        stringy = stringy.replace(/<\/?[^>]+(>|$)/g, "");
+      }
+      
+       this.$copyText(stringy).then(function (e) {}, 
+        function (e) {
+          console.log(e)
+        }) 
     }
   },
   components: {
