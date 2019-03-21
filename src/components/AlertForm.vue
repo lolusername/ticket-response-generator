@@ -3,23 +3,19 @@
     <form class="container">
       <div class="row">
         <div class="col form-group">
-          <input type="text" v-model="contactObject.email" class="form-control" placeholder="Email" />
+          <input type="text" v-model="contactObject.email" class="form-control" placeholder="Email">
         </div>
         <div class="col form-group">
           <div class="input-group mb-3">
             <div class="input-group-prepend">
-              <label class="input-group-text" for="inputGroupSelect01"
-                >Reply Type</label
-              >
+              <label class="input-group-text" for="inputGroupSelect01">Reply Type</label>
             </div>
             <select v-model="selected" class="custom-select" id="reply-type">
               <option
                 v-for="(option, key) in options"
                 :key="key"
                 :value="option.value"
-              >
-                {{ option.optionTitle }}
-              </option>
+              >{{ option.optionTitle }}</option>
             </select>
           </div>
         </div>
@@ -29,9 +25,7 @@
           @click="genAlert"
           type="button"
           class="btn btn-info btn-lg mx-auto generate my-5"
-        >
-          GENERATE REPLY
-        </button>
+        >GENERATE REPLY</button>
       </div>
     </form>
     <div
@@ -69,7 +63,7 @@ export default {
       randomQuoteObject: {},
       submitted: false,
       selected: "",
-      isVisual: false,
+      isVisual:false,
       options: [
         { optionTitle: "Snarky/Humorous", value: "snarky" },
         { optionTitle: "Visual", value: "visual" },
@@ -99,21 +93,20 @@ export default {
           }
         ],
         quotes: [
-          "“Clouds come floating into my life, no longer to carry rain or usher storm, but to add color to my sunset sky.” - Rabindranath Tagore Were sorry there are some stormy skies at your desk right now. We’re actively investigating the issue and will send you an update as soon as we can. "
+          "“Clouds come floating into my life, no longer to carry rain or usher storm, but to add color to my sunset sky.” <p class='author'> - Rabindranath Tagore </p>Were sorry there are some stormy skies at your desk right now. We’re actively investigating the issue and will send you an update as soon as we can. "
         ]
       }
     };
   },
   methods: {
     genAlert() {
-      console.log(this.contactObject.email);
-      if (this.selected) {
-        
+      if (this.selected && this.validateEmail(this.contactObject.email)) {
         var prevSubmitValue = this.submitted;
         var quote = "";
         var selectedCategory = this.selected;
 
         this.submitted = true;
+        this.createContact();
 
         if (selectedCategory == "visual") {
           this.isVisual = true;
@@ -127,27 +120,20 @@ export default {
 
         this.$nextTick(function() {
           if (!prevSubmitValue) {
-            this.createContact();
             this.scrollTo();
           }
         });
       }
-    
     },
     createContact() {
-
-
-      const urlBase = "https://us-central1-it-alert-generator.cloudfunctions.net/hsMiddleware/";
-
-
-      //let url = `${urlBase}email=${this.contactObject.email}`;
-
+      const urlBase =
+        "https://us-central1-it-alert-generator.cloudfunctions.net/hsMiddleware/";
       const contactObj = this.contactObject;
+
       this.$http
         .post(urlBase, contactObj)
         .then(function(response) {
           console.log(response);
-          console.log(`contact object:`,contactObj);
         })
         .catch(function(error) {
           console.log(error);
@@ -160,7 +146,6 @@ export default {
           document.querySelector(query).getBoundingClientRect().top
         );
       };
-
       var doScrolling = function(element, duration) {
         var startingY = window.pageYOffset;
         var elementY = getElementY(element);
@@ -180,7 +165,6 @@ export default {
         var start;
 
         if (!diff) return;
-
         // Bootstrap our animation - it will get called right before next frame shall be rendered.
         window.requestAnimationFrame(function step(timestamp) {
           if (!start) start = timestamp;
@@ -191,9 +175,7 @@ export default {
           // Apply the easing.
           // It can cause bad-looking slow frames in browser performance tool, so be careful.
           percent = easing(percent);
-
           window.scrollTo(0, startingY + diff * percent);
-
           // Proceed with animation as long as we wanted it to.
           if (time < duration) {
             window.requestAnimationFrame(step);
@@ -201,6 +183,10 @@ export default {
         });
       };
       doScrolling("#response-card-container", 333);
+    },
+    validateEmail(email) {
+      var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return re.test(email);
     }
   }
 };
@@ -238,5 +224,12 @@ a {
 button,
 a {
   font-family: "IBM Plex Mono", monospace;
+}
+.blockquote {
+  p.author {
+    color:#0064b7;
+    margin-top:15px;
+    margin-bottom:45px;
+  }
 }
 </style>

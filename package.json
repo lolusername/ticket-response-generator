@@ -14,7 +14,8 @@
     "firebase-admin": "^7.0.0",
     "vue": "^2.5.21",
     "vue-clipboard2": "^0.3.0",
-    "vue-scrollto": "^2.13.0"
+    "vue-scrollto": "^2.13.0",
+    "vue-social-sharing": "^2.4.2"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.3.0",

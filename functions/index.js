@@ -24,24 +24,20 @@ app.post('/', (req,res)=>{
 
     
     let contactObject = {
-        properties: [ 
+        "properties": [ 
             {
                 "property": "email",
                 "value": req.body.email
-            },
-            {
-              "property": "firstname",
-              "value": "Adrian"
             }
         ]
     };
 
     axios.post(url,  contactObject)
     .then((response) => {
-        console.log("post response: "+response);
+        console.log(response);
     })
     .then((response) => {
-        console.log(".then response: "+response);
+        console.log(response);
 
       })
     .catch((error) => {

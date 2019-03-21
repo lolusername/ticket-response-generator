@@ -8,11 +8,13 @@
     >
       <i class="fas fa-undo"></i>
     </button>
-    <select @change="changeCategory" v-model="localSelected" class="">
-      <option disabled value="">Change Reply Type</option>
-      <option v-for="(option, key) in options" :key="key" :value="option.value">
-        {{ option.optionTitle }}
-      </option>
+    <select @change="changeCategory" v-model="localSelected" class>
+      <option disabled value>Change Reply Type</option>
+      <option
+        v-for="(option, key) in options"
+        :key="key"
+        :value="option.value"
+      >{{ option.optionTitle }}</option>
     </select>
   </div>
 </template>
@@ -34,6 +36,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 .btn-regen {
   i {
     color: #fff !important;
@@ -55,5 +58,7 @@ select {
   border-width: 0;
   color: #0064b7;
   font-weight: 700;
+  border-bottom: 2px solid;
+-webkit-appearance: none;
 }
 </style>

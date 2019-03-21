@@ -32,20 +32,35 @@
 
                 <p class="mt-3">{{ randomQuoteObject.postImgText }}</p>
               </section>
-              <section class="" v-else>
-                {{ randomQuoteObject }}
+              <section class="" v-else v-html="randomQuoteObject">
+             
               </section>
             </blockquote>
             <section
               class="row align-self-stretch d-flex align-items-end flex-fill px-3"
             >
               <p class="flex-fill mb-0">
-                <a
-                  class="btn btn-large btn-tweet flex-fill col"
-                  href="https://twitter.com/intent/tweet?text=Hello%20world"
+                
+                <button
+                   class="btn btn-large btn-tweet flex-fill col"
+                  
                 >
-                  <i class="fab fa-twitter-square"></i> Tweet
-                </a>
+           
+                  <social-sharing url="http://italertgenerator.com"
+                                title="IT ALERT GENERATOR"
+                                description="Generate ticket responses you can forward (or not)"
+                             
+                                hashtags="PutInATicket"
+                                twitter-user=""
+                                inline-template>
+
+                <span>
+                   <network network="twitter">
+                      <i class="fab fa-twitter-square"></i> Share
+                    </network>
+                </span>
+                </social-sharing>
+                </button>
               </p>
               <p class="flex-fill mb-0">
                 <button v-clipboard:copy="selected" class="btn btn-copy col">
