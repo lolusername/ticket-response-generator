@@ -7,6 +7,8 @@ const cors = require('cors');
 const app = express();
 const bodyParser = require('body-parser');
 
+
+// this file was ignored to not leak API key create your own apiKey.js and export the API KEY
 const apiKey = require('./apiKey');
 
 
