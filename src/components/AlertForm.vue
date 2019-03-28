@@ -58,12 +58,12 @@ export default {
   data() {
     return {
       contactObject: {
-        email: "test@test.com"
+        email: ""
       },
       randomQuoteObject: {},
       submitted: false,
-      selected: "visual",
-      isVisual:false,
+      selected: "",
+      isVisual: false,
       options: [
         { optionTitle: "Snarky/Humorous", value: "snarky" },
         { optionTitle: "Visual", value: "visual" },
@@ -93,7 +93,8 @@ export default {
           },
           {
             imgUrl: require("../assets/Seinfeld.gif"),
-            preImgText: "Don’t burn out that index finger. We’ll get right back to you, promise!",
+            preImgText:
+              "Don’t burn out that index finger. We’ll get right back to you, promise!",
             postImgText:
               "While you wait, maybe try restarting your computer or taking a break. This might be the Universe telling you to clear your head."
           },
@@ -111,12 +112,11 @@ export default {
           }
         ],
         quotes: [
-          '“Clouds come floating into my life, no longer to carry rain or usher storm, but to add color to my sunset sky.” <p class=author> - Rabindranath Tagore </p>Were sorry there are some stormy skies at your desk right now. We’re actively investigating the issue and will send you an update as soon as we can. ',
-          '“Perfection is not attainable, but if we chase perfection we can catch excellence.” <p class=author> - Vince Lombardi </p> We’re sorry your system is performing less than perfectly right now. We’re going to tackle this issue as soon as we can and follow up with an update once we learn more',
-          '“It\'s very important that we re-learn the art of resting and relaxing… it allows us to clear our minds, focus, and find creative solutions to problems.” <p class=author> - Thich Nhat Hanh <p> Sometimes technology forces us to slow down. Now is is the perfect time to rest and reflect. You sit back and relax. We got this.',
-          '“We are continually faced by great opportunities brilliantly disguised as insoluble problems.” <p class=author> - Lee Iacocca </p> This issue may be a doozy but don’t you worry. We’re actively investigating it and will provide an update as soon as we can.',
-          '“It is during our darkest moments that we must focus to see the light.” <p class=author> - Aristotle <p> Whether or not you just saw the blue screen of death, we hope this moment isn’t too dark for you. We’re actively investigating and will shed light on the issue soon.'
-          
+          "“Clouds come floating into my life, no longer to carry rain or usher storm, but to add color to my sunset sky.” <p class=author> - Rabindranath Tagore </p>Were sorry there are some stormy skies at your desk right now. We’re actively investigating the issue and will send you an update as soon as we can. ",
+          "“Perfection is not attainable, but if we chase perfection we can catch excellence.” <p class=author> - Vince Lombardi </p> We’re sorry your system is performing less than perfectly right now. We’re going to tackle this issue as soon as we can and follow up with an update once we learn more",
+          "“It's very important that we re-learn the art of resting and relaxing… it allows us to clear our minds, focus, and find creative solutions to problems.” <p class=author> - Thich Nhat Hanh <p> Sometimes technology forces us to slow down. Now is is the perfect time to rest and reflect. You sit back and relax. We got this.",
+          "“We are continually faced by great opportunities brilliantly disguised as insoluble problems.” <p class=author> - Lee Iacocca </p> This issue may be a doozy but don’t you worry. We’re actively investigating it and will provide an update as soon as we can.",
+          "“It is during our darkest moments that we must focus to see the light.” <p class=author> - Aristotle <p> Whether or not you just saw the blue screen of death, we hope this moment isn’t too dark for you. We’re actively investigating and will shed light on the issue soon."
         ]
       }
     };
@@ -129,6 +129,7 @@ export default {
         var selectedCategory = this.selected;
 
         this.submitted = true;
+
         this.createContact();
 
         if (selectedCategory == "visual") {
@@ -141,11 +142,11 @@ export default {
         quote = this.quotes[selectedCategory][quoteIndex];
         this.randomQuoteObject = quote;
 
-        this.$nextTick(function() {
-          if (!prevSubmitValue) {
+        if (!prevSubmitValue) {
+          this.$nextTick(function() {
             this.scrollTo();
-          }
-        });
+          });
+        }
       }
     },
     createContact() {
@@ -251,8 +252,8 @@ a {
 .blockquote {
   p.author {
     font-weight: 900;
-    margin-top:15px;
-    margin-bottom:45px;
+    margin-top: 15px;
+    margin-bottom: 45px;
   }
 }
 </style>
