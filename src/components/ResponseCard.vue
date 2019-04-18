@@ -3,9 +3,7 @@
     <div class="row">
       <div class="col-md-8 offset-md-2">
         <div class="card">
-          <div
-            class="card-header d-flex justify-content-between align-items-center"
-          >
+          <div class="card-header d-flex justify-content-between align-items-center">
             <span class="reply">Reply:</span>
             <RegenerateModule
               :options="options"
@@ -14,55 +12,41 @@
               @regenerate="$emit('regenerate')"
             />
           </div>
-          <div class="card-body response d-flex pb-0b flex-wrap ">
+          <div class="card-body response d-flex pb-0b flex-wrap">
             <blockquote class="blockquote mb-0 d-flex px-3">
-              <section class="" v-if="isVisual">
+              <section class v-if="isVisual">
                 <div class="row">
-                  <p class="col-md-8 offset-md-2 text-center lead">
-                    {{ randomQuoteObject.preImgText }}
-                  </p>
+                  <p
+                    class="col-md-8 offset-md-2 text-center lead"
+                  >{{ randomQuoteObject.preImgText }}</p>
                 </div>
                 <div class="row">
-                  <section class=" col-md-8 offset-md-2">
-
-                  
-                  <img
-                    :src="randomQuoteObject.imgUrl"
-                    alt=""
-                    class="img-fluid gif"
-                  />
+                  <section class="col-md-8 offset-md-2">
+                    <img :src="randomQuoteObject.imgUrl" alt class="img-fluid gif">
                   </section>
                 </div>
 
                 <p class="mt-3">{{ randomQuoteObject.postImgText }}</p>
               </section>
-              <section class="" v-else v-html="randomQuoteObject">
-             
-              </section>
+              <section class v-else v-html="randomQuoteObject"></section>
             </blockquote>
-            <section
-              class="row align-self-stretch d-flex align-items-end flex-fill px-3"
-            >
+            <section class="row align-self-stretch d-flex align-items-end flex-fill px-3">
               <p class="flex-fill mb-0">
-                
-                <button
-                   class="btn btn-large btn-tweet flex-fill col"
-                  
-                >
-           
-                  <social-sharing url="http://italertgenerator.com"
-                                title="IT ALERT GENERATOR"
-                                description="Generate ticket responses you can forward (or not)"
-                                hashtags="PutInATicket"
-                                twitter-user=""
-                                inline-template>
-
-                <span>
-                   <network network="twitter">
-                      <i class="fab fa-twitter-square"></i> Share
-                    </network>
-                </span>
-                </social-sharing>
+                <button class="btn btn-large btn-tweet flex-fill col">
+                  <social-sharing
+                    url="http://italertgenerator.com"
+                    title="IT ALERT GENERATOR"
+                    description="Generate ticket responses you can forward (or not)"
+                    hashtags="PutInATicket"
+                    twitter-user
+                    inline-template
+                  >
+                    <span>
+                      <network network="twitter">
+                        <i class="fab fa-twitter-square"></i> Share
+                      </network>
+                    </span>
+                  </social-sharing>
                 </button>
               </p>
               <p class="flex-fill mb-0">
@@ -95,20 +79,24 @@ export default {
     changeCategory(newSelected) {
       this.$emit("update:selected", newSelected);
     },
-    doCopy: function () {
-      var stringy = ""
+    doCopy: function() {
+      var stringy = "";
       if (this.selected === "snarky") {
         stringy = this.randomQuoteObject;
       } else if (this.selected === "visual") {
-        stringy = this.randomQuoteObject.preImgText + this.randomQuoteObject.postImgText;
+        stringy =
+          this.randomQuoteObject.preImgText +
+          this.randomQuoteObject.postImgText;
       } else {
         stringy = stringy.replace(/<\/?[^>]+(>|$)/g, "");
       }
-      
-       this.$copyText(stringy).then(function (e) {}, 
-        function (e) {
-          console.log(e)
-        }) 
+
+      this.$copyText(stringy).then(
+        function(e) {},
+        function(e) {
+          console.log(e);
+        }
+      );
     }
   },
   components: {

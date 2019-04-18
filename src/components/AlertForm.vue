@@ -5,7 +5,7 @@
         <div class="col form-group">
           <input type="text" v-model="contactObject.email" class="form-control" placeholder="Email">
         </div>
-        <div class="col form-group">
+        <div class="col-md form-group">
           <div class="input-group mb-3">
             <div class="input-group-prepend">
               <label class="input-group-text" for="inputGroupSelect01">Reply Type</label>
@@ -157,9 +157,11 @@ export default {
       this.$http
         .post(urlBase, contactObj)
         .then(function(response) {
+          // eslint-disable-next-line
           console.log(response);
         })
         .catch(function(error) {
+          // eslint-disable-next-line
           console.log(error);
         });
     },
@@ -209,6 +211,7 @@ export default {
       doScrolling("#response-card-container", 333);
     },
     validateEmail(email) {
+      // eslint-disable-next-line
       var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
       return re.test(email);
     }

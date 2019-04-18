@@ -36,7 +36,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 .btn-regen {
   i {
     color: #fff !important;
@@ -59,6 +58,6 @@ select {
   color: #0064b7;
   font-weight: 700;
   border-bottom: 2px solid;
--webkit-appearance: none;
+  -webkit-appearance: none;
 }
 </style>

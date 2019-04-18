@@ -57,5 +57,8 @@ img.computer {
   width: 450px !important;
   right: 0;
   top: 10%;
+  @media(max-width: 768px) {
+    display:none;
+  }
 }
 </style>

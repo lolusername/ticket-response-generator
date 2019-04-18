@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+
+
+<style>
+
+.employees {
+height:600px !important;
+}
+
+body {
+			font-family: 'Open Sans', sans-serif !important;
+		}
+
+		html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, dfn, em, font, img, kbd, q, s, samp, small, strike, strong, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, header, nav, section, footer, summary, article {
+		    margin: 0;
+		    padding: 0;
+		    border: 0;
+		    font-weight: inherit;
+		    font-style: inherit;
+		    font-size: 100%;
+		    font-family: inherit;
+		    vertical-align: baseline;
+		    font-family: Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
+		} 
+
+		img {
+			border-radius: 50%;
+			width: 125px;
+      padding-top: 5px;
+			height: 125px;
+
+
+		}
+
+		h3 {
+			text-align: center;
+			font-weight: bold;
+		}
+
+		h1, h3 {
+	
+		}
+
+		.employees {
+
+			width: 100%;
+		}
+
+		.employees h1 {
+			font-size: 18px;
+		}
+
+body {font-family: "Lato", sans-serif;}
+
+table {
+	text-align: center;
+}
+/* Style the tab */
+div.tab {
+    overflow: hidden;
+    align:center;
+}
+
+/* Style the buttons inside the tab */
+div.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 34px;
+}
+
+div.tab h3 {
+	font-size: 34px;
+}
+
+/* Change background color of buttons on hover */
+div.tab button:hover {
+    background-color: #f1f1f1;
+}
+
+/* Create an active/current tablink class */
+div.tab button.active {
+    background-color: #f1f1f1;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    border: 1px solid #ccc;
+    border-top: none;
+    background-color: #f1f1f1;
+    padding: 15px;
+    text-align: left;
+    width: 965px;
+}
+
+/* Style the close button */
+.topright {
+    float: right;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+hr {
+	width: 1000px;
+}
+
+.topright:hover {color: red;}
+</style>
+
+
+
+<div class="employees">
+		<div class="header" align="center">
+		<br>
+		<h1>Meet The Team</h1>
+		<hr>
+		</div>
+		<center>
+<table align="center">
+<div class="topRow">
+<tr>
+<div class="tab">
+        <th><button class="tablinks" onclick="openCity(event, 'Matthew')"><img src="https://turbonomic.com/wp-content/uploads/2018/07/Slice.png" /><h3>Matthew Barto</h3></button></th>
+
+  <th><button class="tablinks" onclick="openCity(event, 'Claudia')"><img style="width: 125px;" src="https://turbonomic.com/wp-content/uploads/Claudia_Bruno1.png" /><h3>Claudia Bruno</h3></button></th>
+  
+  <th><button class="tablinks" onclick="openCity(event, 'Brandon')"><img src="https://turbonomic.com/wp-content/uploads/2015/07/b-combs1.png" /><h3>Brandon Combs</h3></button></th>
+  
+  <th><button class="tablinks" onclick="openCity(event, 'Dallas')"><img src="https://cdn.turbonomic.com/wp-content/uploads/d-marr.png" /><h3>Dallas DeMarr</h3></button></th>
+  <th><button class="tablinks" onclick="openCity(event, 'Chris')"><img src="https://cdn.turbonomic.com/wp-content/uploads/2015/07/c-despopoulos.png" /><h3>Chris Despopoulos</h3></button></th>
+  <th><button class="tablinks" onclick="openCity(event, 'David')"><img src="https://cdn.turbonomic.com/wp-content/uploads/2015/07/d-fiore.png" /><h3>David Fiore</h3></button></th>
+  
+</div>
+<div class="bottomRow">
+<tr>
+<div class="tab">
+
+  <th><button class="tablinks" onclick="openCity(event, 'Orna')"><img src="https://cdn.turbonomic.com/wp-content/uploads/2015/07/orna.png" /><h3>Orna Kliger</h3></button></th>
+  <th><button class="tablinks" onclick="openCity(event, 'Martha')"><img src="https://cdn.turbonomic.com/wp-content/uploads/2015/07/m-kramer.png" /><h3>Martha Kramer</h3></button></th>
+  <th><button class="tablinks" onclick="openCity(event, 'Monica')"><img src="https://turbonomic.com/wp-content/uploads/MonicaLiu.png" /><h3>Monica Liu</h3></button></th>
+  <th><button class="tablinks" onclick="openCity(event, 'Divya')"><img src="https://cdn.turbonomic.com/wp-content/uploads/2015/07/d-singal.png" /><h3>Divya Singal</h3></button></th>
+  <th><button class="tablinks" onclick="openCity(event, 'Gomer')"><img src="https://turbonomic.com/wp-content/uploads/2019/04/GomerAquino-2019-03-26.png" /><h3>Gomer Aquino</h3></button></th>
+  <th><button class="tablinks" onclick="openCity(event, 'Rob')"><img src="https://turbonomic.com/wp-content/uploads/2019/04/RobCooper.jpeg" /><h3>Rob Cooper/h3></button></th>
+ </div>
+</tr>
+</table>
+<div id="Claudia" class="tabcontent">
+  <span onclick="this.parentElement.style.display='none'" class="topright">x</span>
+  <h3>Claudia Bruno – Senior Technical Writer</h3>
+  <p>Claudia joins Chris Despopoulos and Dallas DeMarr on the Documentation team to produce user guides, release notes, and other forms of help.  Bringing over 20 years of experience, Claudia previously worked at Dell EMC through the SMARTS acquisition, as well as at MAI Systems and Information Builders. </p>
+</div>
+
+
+
+
+<div id="Brandon" class="tabcontent">
+  <span onclick="this.parentElement.style.display='none'" class="topright">x</span>
+  <h3>Brandon Combs  –  Senior Technical Trainer and Customer Success Manager</h3>
+  <p>Brandon has worked in the information technology industry for almost 20 years. Before joining the Educational Services team at Turbonomic, he trained and delivered customer enablement services in the application performance management space. Prior to that he worked for many years as a systems administrator. His passion and curiosity have led him to develop a wide range of knowledge and experience in architecting, implementing, and managing all layers of the application infrastructure stack. This includes storage, network, hypervisor, OS, database, and application processes. Personal experience with the performance problems inherent in such complex systems has led him to a career focus in Intelligent Workload Management, or IWM.</p> 
+</div>
+
+<div id="James" class="tabcontent">
+  <span onclick="this.parentElement.style.display='none'" class="topright">x</span>
+  <h3>James Dahlgard  –  Customer Training & Success Coordinator</h3>
+  <p>James Dahlgard recently joined the Turbonomic as a Customer Training & Success Coordinator in December 2015. He coordinates and schedules customer training classes, and helps the overall production of the training and service teams. Prior to joining the company, he worked as a leasing assistant for a NYC student housing company in sales and customer retention. James holds a BS in Communications from Castleton University in Vermont. James is an avid fan of Boston sports teams and loves to snowboard, hike with his dog and fish during the summers.</p>
+</div>
+<div id="Dallas" class="tabcontent">
+  <span onclick="this.parentElement.style.display='none'" class="topright">x</span>
+  <h3>Dallas De Marr  –  Technical Writer</h3>
+  <p>Having started in healthcare, Dallas entered IT Quality Assurance in 2012 and joined Turbonomic as a Quality Assurance Engineer in 2015. Through QA, Dallas became integrally involved in testing, developing code, and the driving of best practices. As he enjoys sharing his knowledge with others, he has gravitated toward the Circle of Excellence (CoE). For CoE, he prepares technical documentation and educational materials as well as helps facilitate training sessions. </p>
+</div>
+<div id="Chris" class="tabcontent">
+  <span onclick="this.parentElement.style.display='none'" class="topright">x</span>
+  <h3>Chris Despopoulos  –  Senior Technical Writer</h3>
+  <p>Chris has been working in high tech as a technical writer and programmer for roughly 20 years. He's documented a wide range of products including publishing tools, circuit design software, stream encoders, root cause analysis products, and B2B services. As a programmer he has created publishing tools for clients including Adobe Systems, ABB, Lucent Technologies, and the British Parliament. Chris is thrilled to be on the Turbonomic team because the product is such a great marriage of metaphor (economic analysis to assure performance and efficiency) and implementation (hey, it works!).</p>
+</div>
+<div id="David" class="tabcontent">
+  <span onclick="this.parentElement.style.display='none'" class="topright">x</span>
+  <h3>David Fiore  –  Senior Technical Trainer</h3>
+  <p>'In my profession it is necessary to re-invent oneself pretty regularly.' David has been a PC support technician, a systems integrator, a network consultant, a trainer, a software developer, and a team lead, and a manager. Through all of these different positions, there has been a recurring theme of acquiring new knowledge and skills, then using these to make technology accessible to his customers.
+
+David holds a B.S. in Physics from the University of California.</p>
+</div>
+
+
+<div id="Matthew" class="tabcontent">
+        <span onclick="this.parentElement.style.display='none'" class="topright">x</span>
+        <h3>Mathew Barto  –  Senior Technical Trainer</h3>
+        
+        <p>Matthew Barto is returning to Turbonomic after taking time to earn a Master’s degree in Science Curriculum & Instruction from Pensacola Christian College. Before graduate school, Matthew worked for Turbonomic for two years as a Customer Education Specialist, developing courseware about Turbonomic and delivering it all over the United States and Canada; he also helped write the initial content for the ACE Professional Certification curriculum. Prior to joining Turbonomic, Matthew taught Mathematics in the Valhalla, NY area. Matthew is excited to be back with the many people he enjoyed working with at Turbonomic and to catch up on all the enhancements to the platform, such as managing workloads in the cloud.</p> 
+
+</div>
+  
+<div id="Orna" class="tabcontent">
+  <span onclick="this.parentElement.style.display='none'" class="topright">x</span>
+  <h3>Orna Kliger  –  Director Educational Services at Turbonomic</h3>
+  
+  <p>Orna has a passion for technology, and for communicating advanced topics in a simple and cohesive way. Turbonomic is the perfect place to develop these passions. Orna spent the first 15 years of her professional life as a software developer, developing telecommunications software and Internet applications. She spent the last 15 years developing educational services teams, building them from scratch into world class organizations that deliver state-of-the art technical education. Orna joined Turbonomic in January, 2012.
+Orna holds a BA in Computer Science from Brandeis University, and an MSc in Computer Science from the Weizmann Institute of Science.</p> 
+</div>
+
+<div id="Martha" class="tabcontent">
+  <span onclick="this.parentElement.style.display='none'" class="topright">x</span>
+  <h3>Martha Kramer  –  Instructional Designer</h3>
+  <p>Martha has over 20 years of experience in corporate training, with a focus during the last ten on instructional design and technical training. Prior to Turbonomic, she designed and implemented courses in productivity and medical software. Certified as an e-learning author and administrator, her focus at Turbonomic is on developing videos and learning aids, as well as execution of the certification programs.
+
+Martha holds a B.A. from Princeton University and an M.A. from Claremont Graduate University, both in policy analysis.
+</p>
+</div>
+
+<div id="Monica" class="tabcontent">
+  <span onclick="this.parentElement.style.display='none'" class="topright">x</span>
+  <h3>Monica Liu  –  Training &amp; Services Coordinator</h3>
+  <p> Monica graduated from University of Tampa in 2013 with an MS Marketing degree. She is very passionate about how instructional design and content marketing can help businesses grow and thrive. Prior to joining the company, Monica worked as a Senior Analyst for a market research firm in NYC where she focused on coordinating different teams and helping the customers succeed. In her personal time, Monica enjoys hanging out at the beach and traveling the world with family and friends. </p>
+</div>
+
+<div id="Melissa" class="tabcontent">
+  <span onclick="this.parentElement.style.display='none'" class="topright">x</span>
+  <h3>Melissa Poirier  –  Technical Training Specialist</h3>
+  <p>Melissa started her career as an English and Communications teacher but was eventually drawn to IT and software. She put her communication skills to good use as a business development representative and eventually transitioned into training and consulting roles. In those roles, she empowered sales, marketing, and product teams to have stronger, more successful conversations with current and prospective customers. Long impressed with our technology, Melissa has wanted to join Turbonomic for some time. She looks forward to fostering strong relationships with co-workers and clients as she helps develop materials and facilitates training sessions.
+
+Melissa holds a BA in English Literature and Secondary Education from Emmanuel College (Boston) and MLitt in Irish and Scottish Studies from the University of Aberdeen (Scotland).</p>
+</div>
+<div id="Divya" class="tabcontent">
+  <span onclick="this.parentElement.style.display='none'" class="topright">x</span>
+  <h3>Divya Singal  –  Senior Technical Trainer</h3>
+  <p>Divya has 10 years of IT experience in Software Development, Quality Assurance and Technical Training. Prior to joining Turbonomic, she worked as a Data Analyst in the health insurance industry gaining experience in Database Development and Data Warehousing. Divya also taught several undergraduate-level Computer Science courses, for Divya learning is fun and teaching is a passion! She is truly excited to be part of this great team at Turbonomic working on a game-changing product.
+
+Divya holds a Graduate Certificate in IT from New York University, a Masters Degree in IT, and a Bachelor's Degree in Computer Science and Engineering.</p>
+</div>
+<div id="Gomer" class="tabcontent">
+  <span onclick="this.parentElement.style.display='none'" class="topright">x</span>
+  <h3>Gomer Aquino – Senior Technical Writer</h3>
+  <p>Gomer has been a technical writer for all of his professional career. Before Turbonomic, he spent a decade at Trend Micro, authoring user assistance content for security software targeted at large enterprises and mid-sized businesses. Originally from the Philippines, Gomer has always been fascinated by world geography and different cultures. Not too long ago, he spent a year traveling to 20 countries, documenting his adventures through stories, photos, and reviews of the places he visited. His reviews eventually got the attention of Google and earned him a spot at its Local Guides Summit.</p>
+</div>
+
+<div id="Rob" class="tabcontent">
+  <span onclick="this.parentElement.style.display='none'" class="topright">x</span>
+  <h3>Rob Cooper – Senior Technical Trainer</h3>
+  <p>Rob Cooper is returning to Turbonomic, having served as Customer Success Manager from 2015 to 2017. In that role, he delivered multiple Rapid Success Engagements and worked with Turbonomic Subject Matter Experts to design and deliver customized deep-dive seminars about Turbonomic to key constituents, such as database developers and capacity planners. He achieved a 95% retention rate at the strategic accounts he served.  With customer-facing experience in a variety of industries, including Healthcare, Defense, Software, and Manufacturing, Rob can understand customer concerns and build credibility quickly with all corporate stakeholders. In addition to holding all three Turbonomic certifications, Rob is a Certified Scrum Master and holds a BS in Industrial Engineering from Polytechnic University. He is excited to be back at Turbonomic!</p>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</center>
+
+<script>
+function openCity(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+     
+
+ 
