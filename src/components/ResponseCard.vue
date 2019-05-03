@@ -33,11 +33,11 @@
             <section class="row align-self-stretch d-flex align-items-end flex-fill px-3">
               <p class="flex-fill mb-0">
                 <button class="btn btn-large btn-tweet flex-fill col">
-                  <social-sharing
+                  <social-sharing 
                     url="http://italertgenerator.com"
-                    title="IT ALERT GENERATOR"
-                    description="Generate ticket responses you can forward (or not)"
-                    hashtags="PutInATicket"
+                    title="Tired of the same old auto-reply? Looking to spice up your support queue alert email? Check out this new IT alert generator!"
+                    description="!"
+                    hashtags="IT,supportticket"
                     twitter-user
                     inline-template
                   >
